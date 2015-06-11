@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="HydrationMonitoring.Views.AddCustomDrinkView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HydrationMonitoring.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:cal="using:Caliburn.Micro"
+    mc:Ignorable="d"
+    Background="{StaticResource BlueColorBrush}"
+    RequestedTheme="Light"
+    Foreground="White"
+    FontFamily="{StaticResource BebasNeue}"
+    >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        
+        <Image Grid.RowSpan="4" Source="ms-appx:///Assets/setup/bottle.png" HorizontalAlignment="Right" Margin="0,0,-60,0"/>
+
+        <TextBlock Text="CUSTOM DRINK" FontFamily="{StaticResource BebasNeue}" FontSize="80" HorizontalAlignment="Center" Margin="10,30,10,0" Foreground="{StaticResource YellowColorBrush}"/>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="{Binding ValueString}" FontSize="130"/>
+            <TextBlock Text="l" VerticalAlignment="Bottom" Margin="0,0,0,15" FontSize="80"/>
+        </StackPanel>
+        <Slider Grid.Row="2" Margin="30" Minimum="0.05" Maximum="2" 
+                Value="{Binding Value, Mode=TwoWay}" SmallChange="0.05" Foreground="{StaticResource YellowColorBrush}" StepFrequency="0.05" LargeChange="0.1"/>
+        <StackPanel Grid.Row="3" VerticalAlignment="Top">
+            <TextBlock Text="When did you drink?" FontSize="40" Margin="30,0" Foreground="{StaticResource YellowColorBrush}"/>
+            <TimePicker  RequestedTheme="Dark" Margin="30,0" Time="{Binding Time,Mode=TwoWay}">
+            </TimePicker>
+        </StackPanel>
+    </Grid>
+
+    <Page.BottomAppBar>
+        <CommandBar Background="{StaticResource DarkerBlueColorBrush}" Foreground="White">
+            <AppBarButton Icon="Accept" Label="" cal:Message.Attach="[Event Click]=[Action AddDrink]"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>

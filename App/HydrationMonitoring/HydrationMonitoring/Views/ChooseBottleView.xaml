@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="HydrationMonitoring.Views.ChooseBottleView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HydrationMonitoring.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:cal="using:Caliburn.Micro"
+    mc:Ignorable="d"
+    Background="{StaticResource BlueColorBrush}"
+    RequestedTheme="Light"
+    Foreground="White"
+    FontFamily="{StaticResource BebasNeue}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="CHOOSE BOTTLE" FontFamily="{StaticResource BebasNeue}" FontSize="70" HorizontalAlignment="Center" Margin="10,30,10,0" Foreground="{StaticResource YellowColorBrush}"/>
+        <TextBlock Text="Choose the bottle where your smart drinking sensor is attached" FontFamily="Segoe UI" TextWrapping="WrapWholeWords" Grid.Row="1" Margin="12,0" FontSize="20"/>
+        <ListView Grid.Row="2" Name="SensorCans" Margin="0,30,0,0" cal:Message.Attach="[Event Tapped]=[Action CanSelected]">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="800">
+                        <Rectangle Fill="{StaticResource DarkerBlueColorBrush}" Visibility="{Binding IsSelected, Converter={StaticResource  BooleanVisibilityConverter}}"/>
+                        <Border  Padding="12,3">
+                            <TextBlock Text="{Binding DisplayedName}" FontFamily="Segoe UI" FontSize="22"/>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

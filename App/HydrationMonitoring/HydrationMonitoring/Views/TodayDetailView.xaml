@@ -1,0 +1,67 @@
+﻿<Page
+    x:Class="HydrationMonitoring.Views.TodayDetailView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HydrationMonitoring.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:cal="using:Caliburn.Micro"
+    mc:Ignorable="d"
+    Background="{StaticResource BlueColorBrush}"
+    RequestedTheme="Light"
+    Foreground="White"
+    FontFamily="{StaticResource BebasNeue}">
+	<Page.Resources>
+		<Style x:Key="ListViewItemStyle1" TargetType="ListViewItem">
+			<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+		</Style>
+	</Page.Resources>
+
+    <ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="TODAY" FontFamily="{StaticResource BebasNeue}" FontSize="70" HorizontalAlignment="Center" Margin="10,30,10,0" Foreground="{StaticResource YellowColorBrush}"/>
+            <TextBlock Text="Here you see any drinks drunken and added workouts. Tap to remove them." FontFamily="Segoe UI" TextWrapping="WrapWholeWords" Grid.Row="1" Margin="12,0" FontSize="20"/>
+
+            <TextBlock Text="Drinks" Grid.Row="2" FontFamily="{StaticResource BebasNeue}" FontSize="40" HorizontalAlignment="Left" Margin="12,12,10,0" Foreground="{StaticResource YellowColorBrush}"/>
+            <ListView Grid.Row="3" Name="Drinks" Margin="0,6,0,0" ItemContainerStyle="{StaticResource ListViewItemStyle1}" cal:Message.Attach="[Event Tapped]=[Action RemoveDrink]">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="{Binding FormatTime}" FontFamily="Segoe UI" FontSize="24" Margin="12,0"/>
+                            <TextBlock Grid.Column="1" Text="{Binding FormatName}" FontFamily="Segoe UI" FontSize="24" Margin="24,0" HorizontalAlignment="Right"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <TextBlock Text="Workouts" Grid.Row="4" FontFamily="{StaticResource BebasNeue}" FontSize="40" HorizontalAlignment="Left" Margin="12,12,10,0" Foreground="{StaticResource YellowColorBrush}"/>
+
+            <ListView Grid.Row="5" Name="Workouts" Margin="0,6,0,0" ItemContainerStyle="{StaticResource ListViewItemStyle1}" cal:Message.Attach="[Event Tapped]=[Action RemoveWorkout]">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="{Binding FormatTime}" FontFamily="Segoe UI" FontSize="24" Margin="12,0"/>
+                            <TextBlock Grid.Column="1" Text="{Binding FormatTotalHydration}" FontFamily="Segoe UI" FontSize="24"  Margin="24,0"  HorizontalAlignment="Right"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ScrollViewer>
+    
+</Page>

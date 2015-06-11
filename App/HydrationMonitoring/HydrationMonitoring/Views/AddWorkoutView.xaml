@@ -1,0 +1,79 @@
+﻿<Page
+    x:Class="HydrationMonitoring.Views.AddWorkoutView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HydrationMonitoring.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:util="using:HydrationMonitoring.Utils"
+    xmlns:cal="using:Caliburn.Micro"
+    Background="{StaticResource BlueColorBrush}"
+    FontFamily="{StaticResource BebasNeue}"
+    RequestedTheme="Light"
+    >
+    
+    
+    <Grid>
+        <Image Source="ms-appx:///Assets/setup/runner.png" Margin="-100,0,0,0"/>
+        <ScrollViewer>
+            <StackPanel>
+                <TextBlock Text="WORKOUT" FontFamily="{StaticResource BebasNeue}" FontSize="100" HorizontalAlignment="Center" Margin="10,10,10,0" Foreground="{StaticResource YellowColorBrush}"/>
+                <Grid Margin="18,12">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="1.5*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="ms-appx:///Assets/setup/intensity.png" Grid.RowSpan="2" />
+                    <TextBlock Text="Intensity" FontSize="40" Grid.Column="1" Foreground="{StaticResource YellowColorBrush}" HorizontalAlignment="Center"/>
+                    <TextBlock Foreground="White" Text="{Binding IntensityString}" FontSize="30" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center"/>
+                    <Slider Foreground="{StaticResource YellowColorBrush}" Maximum="30" Minimum="1" Value="{Binding Intensity, Mode=TwoWay}" SmallChange="1" LargeChange="1" Grid.Row="1" Grid.Column="1" Margin="6,0"/>
+                </Grid>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Start time" FontSize="40" Grid.Column="0" Foreground="{StaticResource YellowColorBrush}" HorizontalAlignment="Center"/>
+                    <TextBlock Text="duration" FontSize="40" Grid.Column="1" Foreground="{StaticResource YellowColorBrush}" HorizontalAlignment="Center"/>
+                    <Grid Grid.Row="1" Grid.Column="1" Width="150">
+                        <Image Source="ms-appx:///Assets/setup/stopwatch.png"/>
+                        <TextBlock Text="{Binding DurationString}" FontSize="55" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Text="HH:MM" FontSize="20" HorizontalAlignment="Center" Margin="0,70,0,0" VerticalAlignment="Center"/>
+                    </Grid>
+                    <Slider Grid.Row="2" Value="{Binding Duration, Mode=TwoWay}" 
+                        Maximum="150" Minimum="10" Grid.Column="1" Margin="12,0" RequestedTheme="Light" 
+                        Foreground="{StaticResource YellowColorBrush}" SmallChange="5" StepFrequency="5" LargeChange="10"/>
+                    <Grid Grid.Row="1" util:Tilt.IsTiltEnabled="True" Grid.Column="0" Width="150" cal:Message.Attach="[Event Tapped]=[Action SetTime]">
+                        <Image Source="ms-appx:///Assets/setup/stopwatch.png"/>
+                        <TextBlock Text="{Binding TimeString}" FontSize="55" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Text="HH:MM" FontSize="20" HorizontalAlignment="Center" Margin="0,70,0,0" VerticalAlignment="Center"/>
+                    </Grid>
+                </Grid>
+                <CheckBox Margin="24,0" RequestedTheme="Dark" IsChecked="{Binding IsIndoor, Mode=TwoWay}" Content="Is workout indoor?"/>
+                <TextBlock HorizontalAlignment="Center" FontSize="35" Margin="12" Foreground="White">
+                    <Run Text="dehydration: "/><Run Text="{Binding CausedDehydration}"/><Run Text="ml"/>
+                    
+                </TextBlock>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+    
+    <Page.BottomAppBar>
+        <CommandBar Background="{StaticResource DarkerBlueColorBrush}" Foreground="White">
+            <AppBarButton Label="" Icon="Accept" cal:Message.Attach="[Event Click]=[Action SaveWorkout]"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+    
+</Page>

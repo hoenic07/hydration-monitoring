@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="HydrationMonitoring.Views.BtleTestScreen"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HydrationMonitoring.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    RequestedTheme="Light"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Margin="40">
+            <TextBlock Text="Trinktest" FontSize="40"/>
+            <Button Click="OnConnect">Verbinden</Button>
+            <TextBox Name="tbPersonId" PlaceholderText="0" Header="Personen ID"/>
+            <ComboBox Name="cbTest" Header="Test" SelectedIndex="0">
+                <ComboBoxItem Content="1: Standard"/>
+                <ComboBoxItem Content="2: Schlucken"/>
+                <ComboBoxItem Content="3: Voll/leer"/>
+                <ComboBoxItem Content="4: Herumtragen"/>
+            </ComboBox>
+            <ComboBox Name="cbContainer" Header="Behälter" SelectedIndex="0">
+                <ComboBoxItem Content="1: 0.5 PET"/>
+                <ComboBoxItem Content="2: Red Bull Dose"/>
+                <ComboBoxItem Content="3: Andere"/>
+            </ComboBox>
+            
+            
+            <Button Click="OnStartStop">Start</Button>
+            <TextBlock Name="tbLog" TextWrapping="Wrap" FontSize="40"/>
+        </StackPanel>
+    </Grid>
+</Page>

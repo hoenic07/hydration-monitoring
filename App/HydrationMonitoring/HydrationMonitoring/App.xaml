@@ -1,0 +1,26 @@
+﻿<cal:CaliburnApplication
+    x:Class="HydrationMonitoring.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HydrationMonitoring"
+    xmlns:cal="using:Caliburn.Micro"
+    xmlns:media="using:Microsoft.Xaml.Interactions.Media"
+    xmlns:util="using:HydrationMonitoring.Utils">
+    
+    <cal:CaliburnApplication.Resources>
+        <Color  x:Key="BlueColor">#54ACEA</Color>
+        <SolidColorBrush x:Key="BlueColorBrush" Color="{StaticResource BlueColor}"/>
+
+        <Color  x:Key="YellowColor">#FFE251</Color>
+        <SolidColorBrush x:Key="YellowColorBrush" Color="{StaticResource YellowColor}"/>
+
+        <Color x:Key="DarkerBlueColor">#4EA1DA</Color>
+        <SolidColorBrush x:Key="DarkerBlueColorBrush" Color="{StaticResource DarkerBlueColor}"/>
+
+        <FontFamily x:Key="BebasNeue">ms-appx:///Assets/BebasNeue.otf#Bebas Neue</FontFamily>
+
+        <util:BooleanVisibilityConverter x:Key="BooleanVisibilityConverter" />
+
+    </cal:CaliburnApplication.Resources>
+
+</cal:CaliburnApplication>

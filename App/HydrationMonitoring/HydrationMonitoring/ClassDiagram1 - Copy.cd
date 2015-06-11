@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="HydrationMonitoring.App">
+    <Position X="17" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAACAAAAAAAAAAAAAABAAAIABAAAAAAAQAAAACAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HydrationMonitoring.Modules.SensorVolumeCalculation">
+    <Position X="12" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAAUAAATAAAkBAAQAAABAAAABAKAAAABUABIAAAAAAA=</HashCode>
+      <FileName>Modules\SensorVolumeCalculation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CurrentCan" />
+      <Property Name="CurrentDrink" />
+      <Property Name="Instance" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HydrationMonitoring.Networking.BtleCommunication">
+    <Position X="13.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAIAAAAAAABAAAAAIAABAAAAAAAAQAAABAAQAAAAA=</HashCode>
+      <FileName>Networking\BtleCommunication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HydrationMonitoring.Networking.BtleAccelerometerReading">
+    <Position X="15" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4AYAE=</HashCode>
+      <FileName>Networking\BtleData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HydrationMonitoring.Networking.BtleSensorService">
+    <Position X="13.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAEAAAAAAAAAgQABAAAAAAAAAAAAAAAQAACAAACAAI=</HashCode>
+      <FileName>Networking\BtleSensorService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HydrationMonitoring.Networking.SensorTagServices">
+    <Position X="15" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Networking\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HydrationMonitoring.Networking.SensorTagCharacteristics">
+    <Position X="15" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAgAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Networking\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HydrationMonitoring.Networking.WeatherApiConnection">
+    <Position X="17" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAQQAA=</HashCode>
+      <FileName>Networking\WeatherApiConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HydrationMonitoring.ViewModels.AddCustomDrinkViewModel">
+    <Position X="9" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARAAAAAAAABgAAAAAAAAAAAAAAAAAAAAAAAgAAAAAQA=</HashCode>
+      <FileName>ViewModels\AddCustomDrinkViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HydrationMonitoring.ViewModels.AddWorkoutViewModel">
+    <Position X="3.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EBAAAAAAICACgAEAAhAAAACJKAAABAEAACAAIAAAAAA=</HashCode>
+      <FileName>ViewModels\AddWorkoutViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HydrationMonitoring.ViewModels.ChooseBottleViewModel">
+    <Position X="5.5" Y="2.75" Width="1.5" />
+    <AssociationLine Name="SelectedSensorCan" Type="HydrationMonitoring.Models.SensorCan">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.263" Y="1.569" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ACAAAAAABAAAAAAAAAAACAAAAAAAAAEAAAAAAAAAAAQ=</HashCode>
+      <FileName>ViewModels\ChooseBottleViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SelectedSensorCan" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="SensorCans" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="HydrationMonitoring.ViewModels.MainViewModel">
+    <Position X="2" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAEQAEBiAhBAEAAAAEAUAAWAAgQAAgGAAgAAIEBAAAA=</HashCode>
+      <FileName>ViewModels\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="HydrationState" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Cans" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="HydrationMonitoring.ViewModels.TodayDetailViewModel">
+    <Position X="7.25" Y="2.75" Width="1.5" />
+    <AssociationLine Name="SelectedWorkout" Type="HydrationMonitoring.Models.Workout" ManuallyRouted="true">
+      <Path>
+        <Point X="8.656" Y="5.848" />
+        <Point X="8.656" Y="6.95" />
+        <Point X="8.929" Y="6.95" />
+        <Point X="8.929" Y="15.973" />
+        <Point X="9.5" Y="15.973" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEkAAAAAIAAAAAAACAAIACAAAAAAAAAkAAA=</HashCode>
+      <FileName>ViewModels\TodayDetailViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SelectedDrink" />
+      <Property Name="SelectedWorkout" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HydrationMonitoring.ViewModels.UserSettingsViewModel">
+    <Position X="10.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBABAAAphUiAAIDAAAChAAQAACAABCEAAAAAgAAAEAA=</HashCode>
+      <FileName>ViewModels\UserSettingsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HydrationMonitoring.ViewModels.ViewModelBase">
+    <Position X="7" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ViewModelBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HydrationMonitoring.Views.AddCustomDrinkView">
+    <Position X="9" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\AddCustomDrinkView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HydrationMonitoring.Views.AddWorkoutView">
+    <Position X="3.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\AddWorkoutView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HydrationMonitoring.Views.ChooseBottleView">
+    <Position X="5.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\ChooseBottleView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HydrationMonitoring.Views.MainView">
+    <Position X="2" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\MainView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HydrationMonitoring.Views.TodayDetailView">
+    <Position X="7.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\TodayDetailView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HydrationMonitoring.Views.UserSettingsView">
+    <Position X="10.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\UserSettingsView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HydrationMonitoring.Models.Can">
+    <Position X="4" Y="10.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="HydrationMonitoring.Models.SensorCan">
+    <Position X="6.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="HydrationMonitoring.Models.DailyHydration">
+    <Position X="17" Y="8.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="HydrationMonitoring.Models.DrinkStamp">
+    <Position X="9.5" Y="10" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="HydrationMonitoring.Models.SensorDrinkStamp">
+    <Position X="12" Y="10" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="HydrationMonitoring.Models.HydrationState">
+    <Position X="2" Y="13.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="HydrationMonitoring.Models.User">
+    <Position X="14.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="HydrationMonitoring.Models.WeatherConditions">
+    <Position X="17" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="HydrationMonitoring.Models.Workout">
+    <Position X="9.5" Y="13" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="HydrationMonitoring.Modules.HydrationCalculation">
+    <Position X="14.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="HydrationMonitoring.Utils.GlobalSettings">
+    <Position X="17" Y="12.75" Width="1.5" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Instance" />
+      <Property Name="TodaysHydration" />
+      <Property Name="User" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HydrationMonitoring.Utils.MessageCenter">
+    <Position X="14.25" Y="11" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
